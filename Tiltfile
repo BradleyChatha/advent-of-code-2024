@@ -19,5 +19,17 @@ def dlang(day):
         deps=[folder + "/source/", folder + "/input.txt"]
     )
 
+def golang(day):
+    folder = "day{}".format(day)
+    local_resource(
+        "{}:both".format(folder),
+        cmd=["go", "run", "./", "input.txt"],
+        dir=folder,
+        auto_init=False,
+        labels=[folder],
+        deps=[folder + "/main.go", folder + "/input.txt"]
+    )
+
 dotnet(1)
 dlang(2)
+golang(3)
