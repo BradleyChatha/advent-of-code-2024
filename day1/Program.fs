@@ -4,8 +4,7 @@ open System.IO
 type Pair = (int * int)
 
 let args = Environment.GetCommandLineArgs()
-let part = int args[1]
-let input = File.ReadAllText(args[2])
+let input = File.ReadAllText(args[1])
 
 let linePairs = 
     input.Split('\n')

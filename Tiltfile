@@ -2,11 +2,22 @@ def dotnet(day):
     folder = "day{}".format(day)
     local_resource(
         "{}:both".format(folder),
-        serve_cmd=["dotnet", "watch", "run", "--", "1", "input.txt"],
+        serve_cmd=["dotnet", "watch", "run", "--", "input.txt"],
         serve_dir=folder,
         auto_init=False,
-        trigger_mode=TRIGGER_MODE_MANUAL,
         labels=[folder]
     )
 
+def dlang(day):
+    folder = "day{}".format(day)
+    local_resource(
+        "{}:both".format(folder),
+        cmd=["dub", "run", "--", "input.txt"],
+        dir=folder,
+        auto_init=False,
+        labels=[folder],
+        deps=[folder + "/source/", folder + "/input.txt"]
+    )
+
 dotnet(1)
+dlang(2)
