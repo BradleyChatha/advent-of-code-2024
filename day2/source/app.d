@@ -60,10 +60,10 @@ void main(string[] args)
             if(next >= report.levels.length || curr >= report.levels.length)
                 continue;
 
-            const diff 					= report.levels[curr] - report.levels[next];
-            const descends 				= diff > 0;
-            const isExpectedDirection 	= descends == shouldDescend;
-            const isInBounds 			= diff.abs >= 1 && diff.abs <= 3;
+            const diff                  = report.levels[curr] - report.levels[next];
+            const descends              = diff > 0;
+            const isExpectedDirection   = descends == shouldDescend;
+            const isInBounds            = diff.abs >= 1 && diff.abs <= 3;
             if(!isExpectedDirection || !isInBounds)
                 return;
         }
