@@ -30,7 +30,19 @@ def golang(day):
         deps=[folder + "/main.go", folder + "/input.txt"]
     )
 
+def maven(day):
+    folder = "day{}".format(day)
+    local_resource(
+        "{}:both".format(folder),
+        cmd=["mvn", "exec:java"],
+        dir=folder,
+        auto_init=False,
+        labels=[folder],
+        deps=[folder + "/src/", folder + "/input.txt"],
+    )
+
 dotnet(1)
 dlang(2)
 golang(3)
 dotnet(4)
+maven(5)
