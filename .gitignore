@@ -4,3 +4,5 @@ bin/
 obj/
 target/
 .mvn
+*.o
+asm_output
