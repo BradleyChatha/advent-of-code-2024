@@ -6,3 +6,4 @@ target/
 .mvn
 *.o
 asm_output
+output
