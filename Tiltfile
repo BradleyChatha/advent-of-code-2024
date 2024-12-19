@@ -5,6 +5,7 @@ def dotnet(day):
         serve_cmd=["dotnet", "watch", "run", "--", "input.txt"],
         serve_dir=folder,
         auto_init=False,
+        deps=[folder + "/input.txt"],
         labels=[folder]
     )
 
@@ -73,3 +74,4 @@ ihatemyself(7)
 make(8)
 dlang(9)
 golang(10)
+dotnet(11)
